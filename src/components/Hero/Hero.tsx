@@ -19,7 +19,7 @@ const Hero = () => {
     return text.split('').map((char, index) => (
       <motion.span
         key={index}
-        variants={heroLetter}
+        variants={heroLetter as any}
         className={`inline-block ${
           isHighlight 
             ? 'bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent' 
@@ -37,10 +37,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
       {/* Background with Zoom Animation */}
       <motion.div
-        variants={heroBackgroundZoom}
+        variants={heroBackgroundZoom as any}
         initial="initial"
         animate="animate"
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
